@@ -9,9 +9,12 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import RealmSwift
 
 protocol ConfigurationModelProtocol {
     func coinsLoaded(coinList: [RawCoin])
+    func coinsSaved(staus: Bool, errorMessage: String?)
+    func savedCoins(selectedCoins: [RawCoin])
 }
 
 class ConfigurationModel {
@@ -84,11 +87,40 @@ class ConfigurationModel {
         var rawCoinList = [RawCoin]()
         for (_, subJson): (String, JSON) in icons {
             if let asset_id = subJson[Constansts.assetId].string, let imageUrl = subJson[Constansts.url].string, let coinName = assets[asset_id] {
-                let rawCoin = RawCoin(asset_id: asset_id, coinName: coinName, imageUrl: imageUrl)
+                let rawCoin = RawCoin()
+                rawCoin.asset_id = asset_id
+                rawCoin.coinName = coinName
+                rawCoin.imageUrl = imageUrl
                 rawCoinList.append(rawCoin)
             }
         }
         rawCoinList.sort {$0.coinName < $1.coinName}
         self.delegate?.coinsLoaded(coinList: rawCoinList)
+        getSavedPreferences()
+    }
+    
+    private func getSavedPreferences() {
+        let realm = try! Realm()
+        let savedPreference = realm.objects(RawCoin.self)
+        var coinList = [RawCoin]()
+        for pref in savedPreference {
+            coinList.append(pref)
+        }
+        self.delegate?.savedCoins(selectedCoins: coinList)
+    }
+    
+    //MARK:- Save preference
+    func savePreference(coinList: [RawCoin]) {
+        if coinList.count > 0 {
+            let realm = try! Realm()
+            try! realm.write {
+                for coin in coinList {
+                    realm.add(coin)
+                }
+            }
+            delegate?.coinsSaved(staus: true, errorMessage: nil)
+        } else {
+            delegate?.coinsSaved(staus: false, errorMessage: Constansts.ConfigurationPage.failedToSave)
+        }
     }
 }

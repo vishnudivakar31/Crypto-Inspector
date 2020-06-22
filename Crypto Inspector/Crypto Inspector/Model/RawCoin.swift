@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct RawCoin {
-    let asset_id: String
-    let coinName: String
-    let imageUrl: String
-    var checked: Bool = false
+class RawCoin: Object {
+    @objc dynamic var asset_id: String = ""
+    @objc dynamic var coinName: String = ""
+    @objc dynamic var imageUrl: String = ""
+    @objc dynamic var checked: Bool = false
 }

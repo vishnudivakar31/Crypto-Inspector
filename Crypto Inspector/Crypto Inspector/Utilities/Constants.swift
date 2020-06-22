@@ -17,5 +17,6 @@ struct Constansts {
         static let cellIdentifier = "CryptoCellIdentifier"
         static let cryptoIdentifier = "type_is_crypto"
         static let coinName = "name"
+        static let failedToSave = "Unable to save coin preference. Please check the selected coins."
     }
 }

@@ -45,9 +45,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Configure" id="icH-jw-bKR">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="598-O8-DKU"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="598-O8-DKU">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="BYZ-38-t0r" id="fcT-xw-eJI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="lFV-MN-bt4" id="S7c-oL-g0U"/>
                         <outlet property="tableView" destination="IoP-g2-uCF" id="Mrk-N2-n8Z"/>
                     </connections>
                 </viewController>
