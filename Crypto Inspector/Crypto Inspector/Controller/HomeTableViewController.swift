@@ -12,6 +12,7 @@ class HomeTableViewController: UITableViewController {
 
     private let homeModel = HomeModel()
     private var currentPrices = [CurrentPrice]()
+    @IBOutlet weak var labelView: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +22,6 @@ class HomeTableViewController: UITableViewController {
             self.homeModel.getCurrentPrice()
         })
         homeModel.getCurrentPrice()
-        setLiveLabel()
-    }
-    
-    func setLiveLabel() {
-        if let navigationBar = self.navigationController?.navigationBar {
-            let label = UILabel()
-            label.text = "Live"
-            label.textColor = #colorLiteral(red: 0.1307886541, green: 0.6106421947, blue: 0.3994703293, alpha: 1)
-            navigationBar.addSubview(label)
-        }
     }
     
     // MARK: - Table view data source
@@ -59,6 +50,14 @@ class HomeTableViewController: UITableViewController {
         }
         return nil
     }
+    
+    func setLiveLabel() {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-yyyy, HH:mm:ss"
+        labelView.text = "Last Modified: \(dateFormatter.string(from: date))"
+        labelView.insetsLayoutMarginsFromSafeArea = true
+    }
 }
 
 // MARK:- HomeModel Protocol Implementation
@@ -66,6 +65,7 @@ extension HomeTableViewController: HomeModelProtocol {
     func currentPriceListFetched(currentPriceList: [CurrentPrice]) {
         currentPrices = currentPriceList
         currentPrices.sort {$0.currentPrice > $1.currentPrice}
+        self.setLiveLabel()
         tableView.reloadData()
     }
 }
