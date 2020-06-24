@@ -24,6 +24,15 @@ class ViewController: UIViewController {
         searchBar.delegate = self
         configModel.getAllCoins()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let util = Util.getInstance()
+        if configModel.isExistingUser && !util.isAppLaunched() {
+            performSegue(withIdentifier: Constansts.HomePage.homeSegue, sender: self)
+            util.setAppLaunched(true)
+        }
+    }
+    
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         configModel.savePreference(coinList: selectedTypes)
     }
@@ -77,12 +86,14 @@ extension ViewController: UISearchBarDelegate {
 // MARK:- Configuration Model Protocol
 extension ViewController: ConfigurationModelProtocol {
     func savedCoins(selectedCoins: [RawCoin]) {
-        selectedTypes = selectedCoins
-        tableView.reloadData()
+        if selectedTypes.count == 0 {
+            selectedTypes = selectedCoins
+            tableView.reloadData()
+        }
     }
     func coinsSaved(staus: Bool, errorMessage: String?) {
         if staus {
-            // TODO: Perform segue to navigate to next page
+            performSegue(withIdentifier: Constansts.HomePage.homeSegue, sender: self)
         } else {
             let alert = UIAlertController(title: "Alert", message: errorMessage, preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)

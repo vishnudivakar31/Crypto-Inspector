@@ -13,10 +13,16 @@ struct Constansts {
     static let apikey = "apikey"
     static let assetId = "asset_id"
     static let url = "url"
+    static let firstTimeUser = "firstTimeUser"
     struct ConfigurationPage {
         static let cellIdentifier = "CryptoCellIdentifier"
         static let cryptoIdentifier = "type_is_crypto"
         static let coinName = "name"
         static let failedToSave = "Unable to save coin preference. Please check the selected coins."
+    }
+    struct HomePage {
+        static let homeSegue = "goToHome"
+        static let cellIdentifier = "HomeCellIdentifier"
+        static let currentRatelabel = "rate"
     }
 }

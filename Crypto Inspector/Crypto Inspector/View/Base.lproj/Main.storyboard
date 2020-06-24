@@ -54,11 +54,41 @@
                     <connections>
                         <outlet property="searchBar" destination="lFV-MN-bt4" id="S7c-oL-g0U"/>
                         <outlet property="tableView" destination="IoP-g2-uCF" id="Mrk-N2-n8Z"/>
+                        <segue destination="FOx-Dl-2Nq" kind="show" identifier="goToHome" id="y4R-Bt-Mem"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="IBd-Ia-639">
+            <objects>
+                <tableViewController id="FOx-Dl-2Nq" customClass="HomeTableViewController" customModule="Crypto_Inspector" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cpl-lH-zMk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeCellIdentifier" id="rLL-X4-vwK">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rLL-X4-vwK" id="H8g-8O-NKE">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FOx-Dl-2Nq" id="OvE-UM-AEH"/>
+                            <outlet property="delegate" destination="FOx-Dl-2Nq" id="fan-VG-Py3"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Home" id="Bsm-1d-Kmz"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TKk-XK-vlW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2023" y="132"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pNJ-1m-Iz1">

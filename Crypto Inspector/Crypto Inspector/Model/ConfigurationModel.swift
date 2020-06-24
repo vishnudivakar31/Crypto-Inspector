@@ -21,30 +21,15 @@ class ConfigurationModel {
     var delegate: ConfigurationModelProtocol?
     private let baseUrl = "https://rest.coinapi.io/v1"
     
-    private var apiKey: String {
-        guard let path = Bundle.main.path(forResource: Constansts.secretsFile, ofType: "plist") else {
-            fatalError("Unable to fetch secret plist.")
-        }
-        let url = URL(fileURLWithPath: path)
-        do {
-            let data = try Data(contentsOf: url)
-            guard let plist = try PropertyListSerialization.propertyList(from: data, options: .mutableContainers, format: nil)
-                as? [String: String] else {fatalError("Unable to serialize secret property list")}
-            for (key, value) in plist {
-                if key == Constansts.apikey {
-                    return value
-                }
-            }
-        } catch {
-            fatalError(error.localizedDescription)
-        }
-        fatalError("Unable to compute apiKey")
+    var isExistingUser: Bool {
+        let defaults = UserDefaults.standard
+        return defaults.bool(forKey: Constansts.firstTimeUser)
     }
     
     // MARK: - Network Calls
     
     func getAllCoins() {
-        let url = "\(baseUrl)/assets?apikey=\(apiKey)"
+        let url = "\(baseUrl)/assets?apikey=\(Util.apiKey)"
         AF.request(url).responseJSON { response in
             do {
                 let jsonData = try JSON(data: response.data!)
@@ -56,7 +41,7 @@ class ConfigurationModel {
     }
     
     private func getAssetIcons(assets: [String: String]) {
-        let url = "\(baseUrl)/assets/icons/50?apikey=\(apiKey)"
+        let url = "\(baseUrl)/assets/icons/50?apikey=\(Util.apiKey)"
         AF.request(url).responseJSON { response in
             do {
                 let jsonData = try JSON(data: response.data!)
@@ -109,6 +94,11 @@ class ConfigurationModel {
         self.delegate?.savedCoins(selectedCoins: coinList)
     }
     
+    private func setExistingUser(_ status: Bool) {
+        let defaults = UserDefaults.standard
+        defaults.set(status, forKey: Constansts.firstTimeUser)
+    }
+    
     //MARK:- Save preference
     func savePreference(coinList: [RawCoin]) {
         if coinList.count > 0 {
@@ -119,6 +109,7 @@ class ConfigurationModel {
                 }
             }
             delegate?.coinsSaved(staus: true, errorMessage: nil)
+            setExistingUser(true)
         } else {
             delegate?.coinsSaved(staus: false, errorMessage: Constansts.ConfigurationPage.failedToSave)
         }

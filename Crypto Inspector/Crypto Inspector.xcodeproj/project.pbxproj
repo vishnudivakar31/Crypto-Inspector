@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8BA10CDC24A3E3FA006A5A5F /* CurrentPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA10CDB24A3E3FA006A5A5F /* CurrentPrice.swift */; };
 		8BED280924A0FF18008D7F66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BED280824A0FF18008D7F66 /* AppDelegate.swift */; };
 		8BED280B24A0FF18008D7F66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BED280A24A0FF18008D7F66 /* SceneDelegate.swift */; };
 		8BED280D24A0FF18008D7F66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BED280C24A0FF18008D7F66 /* ViewController.swift */; };
@@ -17,12 +18,18 @@
 		8BED282324A12988008D7F66 /* ConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BED282224A12988008D7F66 /* ConfigurationModel.swift */; };
 		8BED282524A12BD8008D7F66 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BED282424A12BD8008D7F66 /* Secrets.plist */; };
 		8BED282724A13A7F008D7F66 /* RawCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BED282624A13A7F008D7F66 /* RawCoin.swift */; };
+		8BED282924A2410E008D7F66 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BED282824A2410E008D7F66 /* HomeTableViewController.swift */; };
+		8BED282B24A241E2008D7F66 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BED282A24A241E2008D7F66 /* Util.swift */; };
+		8BED282D24A244B8008D7F66 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BED282C24A244B8008D7F66 /* HomeModel.swift */; };
+		8BED283024A24872008D7F66 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BED282E24A24872008D7F66 /* HomeTableViewCell.swift */; };
+		8BED283124A24872008D7F66 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BED282F24A24872008D7F66 /* HomeTableViewCell.xib */; };
 		C6EA7EA50627857AEC1B38DF /* Pods_Crypto_Inspector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917AE3DA3989189A7343884E /* Pods_Crypto_Inspector.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		82D73C4C670EFA49E5DB2143 /* Pods-Crypto Inspector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto Inspector.debug.xcconfig"; path = "Target Support Files/Pods-Crypto Inspector/Pods-Crypto Inspector.debug.xcconfig"; sourceTree = "<group>"; };
 		83D3595E7D9362336671B6A1 /* Pods-Crypto Inspector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto Inspector.release.xcconfig"; path = "Target Support Files/Pods-Crypto Inspector/Pods-Crypto Inspector.release.xcconfig"; sourceTree = "<group>"; };
+		8BA10CDB24A3E3FA006A5A5F /* CurrentPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPrice.swift; sourceTree = "<group>"; };
 		8BED280524A0FF18008D7F66 /* Crypto Inspector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crypto Inspector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BED280824A0FF18008D7F66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BED280A24A0FF18008D7F66 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +42,11 @@
 		8BED282224A12988008D7F66 /* ConfigurationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationModel.swift; sourceTree = "<group>"; };
 		8BED282424A12BD8008D7F66 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		8BED282624A13A7F008D7F66 /* RawCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawCoin.swift; sourceTree = "<group>"; };
+		8BED282824A2410E008D7F66 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		8BED282A24A241E2008D7F66 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		8BED282C24A244B8008D7F66 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		8BED282E24A24872008D7F66 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		8BED282F24A24872008D7F66 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		917AE3DA3989189A7343884E /* Pods_Crypto_Inspector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto_Inspector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -97,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				8BED280E24A0FF18008D7F66 /* Main.storyboard */,
+				8BED282F24A24872008D7F66 /* HomeTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -105,6 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				8BED280C24A0FF18008D7F66 /* ViewController.swift */,
+				8BED282824A2410E008D7F66 /* HomeTableViewController.swift */,
+				8BED282E24A24872008D7F66 /* HomeTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -114,6 +129,8 @@
 			children = (
 				8BED282224A12988008D7F66 /* ConfigurationModel.swift */,
 				8BED282624A13A7F008D7F66 /* RawCoin.swift */,
+				8BED282C24A244B8008D7F66 /* HomeModel.swift */,
+				8BA10CDB24A3E3FA006A5A5F /* CurrentPrice.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -122,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				8BED282024A11755008D7F66 /* Constants.swift */,
+				8BED282A24A241E2008D7F66 /* Util.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -198,6 +216,7 @@
 				8BED282524A12BD8008D7F66 /* Secrets.plist in Resources */,
 				8BED281524A0FF19008D7F66 /* LaunchScreen.storyboard in Resources */,
 				8BED281224A0FF19008D7F66 /* Assets.xcassets in Resources */,
+				8BED283124A24872008D7F66 /* HomeTableViewCell.xib in Resources */,
 				8BED281024A0FF18008D7F66 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,8 +272,13 @@
 			files = (
 				8BED280D24A0FF18008D7F66 /* ViewController.swift in Sources */,
 				8BED280924A0FF18008D7F66 /* AppDelegate.swift in Sources */,
+				8BED282D24A244B8008D7F66 /* HomeModel.swift in Sources */,
 				8BED280B24A0FF18008D7F66 /* SceneDelegate.swift in Sources */,
+				8BED282B24A241E2008D7F66 /* Util.swift in Sources */,
 				8BED282124A11755008D7F66 /* Constants.swift in Sources */,
+				8BA10CDC24A3E3FA006A5A5F /* CurrentPrice.swift in Sources */,
+				8BED283024A24872008D7F66 /* HomeTableViewCell.swift in Sources */,
+				8BED282924A2410E008D7F66 /* HomeTableViewController.swift in Sources */,
 				8BED282324A12988008D7F66 /* ConfigurationModel.swift in Sources */,
 				8BED282724A13A7F008D7F66 /* RawCoin.swift in Sources */,
 			);
