@@ -55,7 +55,7 @@ class HomeModel {
     }
     
     private func performRequest(coin: RawCoin, completion: @escaping (CurrentPrice) -> Void) {
-        let url = "\(baseUrl)/exchangerate/\(coin.asset_id)/USD?apikey=\(Util.apiKey)"
+        let url = "\(baseUrl)/exchangerate/\(coin.asset_id)/\(coin.currencyCode)?apikey=\(Util.apiKey)"
         AF.request(url).responseJSON { response in
             do {
                 let data = try JSON(data: response.data!)
