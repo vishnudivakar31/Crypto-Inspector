@@ -12,6 +12,7 @@ class HomeTableViewController: UITableViewController {
 
     private let homeModel = HomeModel()
     private var currentPrices = [CurrentPrice]()
+    private var selectedCoin: CurrentPrice?
     @IBOutlet weak var labelView: UILabel!
     
     override func viewDidLoad() {
@@ -57,8 +58,8 @@ class HomeTableViewController: UITableViewController {
         deleteAction.image = UIImage(systemName: "trash.circle.fill")
         
         let editAction = UIContextualAction(style: .normal, title: "Edit") { (action, view, completionHandler) in
-            print(self.currentPrices[indexPath.row].coinName)
-            //TODO: Edit Item
+            self.selectedCoin = self.currentPrices[indexPath.row]
+            self.performSegue(withIdentifier: Constansts.HomePage.editSegue, sender: self)
         }
         editAction.image = UIImage(systemName: "pencil")
         editAction.backgroundColor = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
@@ -82,6 +83,20 @@ class HomeTableViewController: UITableViewController {
         labelView.text = "Last Modified: \(dateFormatter.string(from: date))"
         labelView.insetsLayoutMarginsFromSafeArea = true
     }
+    
+    // MARK:- Override prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == Constansts.HomePage.editSegue {
+                if let destination = segue.destination as? EditViewController {
+                    if let safeCoin = self.selectedCoin {
+                        destination.coin = safeCoin
+                    }
+                }
+            }
+        }
+    }
+    
 }
 
 // MARK:- HomeModel Protocol Implementation

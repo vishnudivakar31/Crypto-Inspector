@@ -94,11 +94,96 @@
                     <navigationItem key="navigationItem" title="Home" id="Bsm-1d-Kmz"/>
                     <connections>
                         <outlet property="labelView" destination="4hs-F0-0OZ" id="q38-Jj-UEo"/>
+                        <segue destination="M7p-lX-JSO" kind="presentation" identifier="goToEdit" id="1RS-yg-POc"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TKk-XK-vlW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2023" y="132"/>
+        </scene>
+        <!--Edit View Controller-->
+        <scene sceneID="sBW-L9-egq">
+            <objects>
+                <viewController id="M7p-lX-JSO" customClass="EditViewController" customModule="Crypto_Inspector" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7qB-4W-huf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="8Bo-aI-Qh3">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qW-VW-E9a">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="25.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qBK-bW-C5W">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="300.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="255" id="6jc-OM-aAS"/>
+                                            <constraint firstAttribute="width" constant="414" id="GyS-tR-eyM"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYg-Ah-1R3">
+                                        <rect key="frame" x="0.0" y="386" width="414" height="28.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Price: US$ 2455" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BL7-hK-ony">
+                                        <rect key="frame" x="0.0" y="444.5" width="414" height="25"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="on5-b4-BUJ">
+                                        <rect key="frame" x="0.0" y="500" width="414" height="230"/>
+                                    </pickerView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="59" translatesAutoresizingMaskIntoConstraints="NO" id="LHq-Dh-zLE">
+                                        <rect key="frame" x="0.0" y="759.5" width="414" height="48.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10j-9Y-OzO">
+                                                <rect key="frame" x="0.0" y="0.0" width="177.5" height="48.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                <state key="normal" title="Cancel">
+                                                    <color key="titleColor" red="0.6069023013" green="0.1105789021" blue="0.12151367220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="cancelButtonPressed:" destination="M7p-lX-JSO" eventType="touchUpInside" id="xRm-f4-hjf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeD-hS-9Xs">
+                                                <rect key="frame" x="236.5" y="0.0" width="177.5" height="48.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                <state key="normal" title="Submit"/>
+                                                <connections>
+                                                    <action selector="submitButtonPressed:" destination="M7p-lX-JSO" eventType="touchUpInside" id="zgh-iB-p2w"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="8Bo-aI-Qh3" firstAttribute="top" secondItem="F9X-xR-gaq" secondAttribute="top" id="7s4-XF-kNR"/>
+                            <constraint firstItem="F9X-xR-gaq" firstAttribute="bottom" secondItem="8Bo-aI-Qh3" secondAttribute="bottom" id="gkv-CO-fF2"/>
+                            <constraint firstItem="8Bo-aI-Qh3" firstAttribute="leading" secondItem="F9X-xR-gaq" secondAttribute="leading" id="shr-KQ-Zbw"/>
+                            <constraint firstItem="F9X-xR-gaq" firstAttribute="trailing" secondItem="8Bo-aI-Qh3" secondAttribute="trailing" id="vtg-Dx-l7m"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="F9X-xR-gaq"/>
+                    </view>
+                    <connections>
+                        <outlet property="coinImageView" destination="qBK-bW-C5W" id="Igr-sp-tc2"/>
+                        <outlet property="coinLabelView" destination="DYg-Ah-1R3" id="wpa-ma-VlJ"/>
+                        <outlet property="currentPriceLabel" destination="BL7-hK-ony" id="2eF-5B-nhg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wfK-3x-bH3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2866.666666666667" y="133.92857142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pNJ-1m-Iz1">

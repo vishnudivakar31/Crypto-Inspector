@@ -24,5 +24,7 @@ struct Constansts {
         static let homeSegue = "goToHome"
         static let cellIdentifier = "HomeCellIdentifier"
         static let currentRatelabel = "rate"
+        static let editSegue = "goToEdit"
     }
+    
 }
