@@ -113,7 +113,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ELZ-Hj-6UL">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="715"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search country names" id="J36-bk-7N7">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -131,38 +131,6 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="180" translatesAutoresizingMaskIntoConstraints="NO" id="EZG-HX-jfK">
-                                        <rect key="frame" x="55.5" y="725" width="303" height="49"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6d-lj-7E1">
-                                                <rect key="frame" x="0.0" y="0.0" width="78" height="49"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="d6d-lj-7E1" secondAttribute="height" multiplier="8:5" id="rcc-dm-tFk"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                                <state key="normal" title="Cancel">
-                                                    <color key="titleColor" red="0.6069023013" green="0.1105789021" blue="0.12151367220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="cancelButtonPressed:" destination="nS2-pq-7B8" eventType="touchUpInside" id="tF2-aT-s4u"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCb-WS-Lb5">
-                                                <rect key="frame" x="258" y="0.0" width="45" height="49"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="tCb-WS-Lb5" secondAttribute="height" multiplier="34:37" id="PRI-yC-fmH"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                                <state key="normal" title="Save"/>
-                                                <connections>
-                                                    <action selector="saveButtonPressed:" destination="nS2-pq-7B8" eventType="touchUpInside" id="LR6-PZ-rGu"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="d6d-lj-7E1" firstAttribute="leading" secondItem="EZG-HX-jfK" secondAttribute="leading" id="xdM-cM-ecP"/>
-                                        </constraints>
-                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="ELZ-Hj-6UL" firstAttribute="top" secondItem="s42-41-DdC" secondAttribute="top" id="45a-Jr-KaZ"/>
@@ -180,7 +148,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oTX-tY-Q35"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Bitcoin" id="irI-rJ-rHU"/>
+                    <navigationItem key="navigationItem" title="Bitcoin" id="irI-rJ-rHU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="7cn-78-87R">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="nS2-pq-7B8" id="awb-Rq-4bV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="J36-bk-7N7" id="tGd-qK-Akp"/>
                         <outlet property="tableView" destination="ELZ-Hj-6UL" id="Z1K-LN-hUQ"/>

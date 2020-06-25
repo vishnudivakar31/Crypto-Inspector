@@ -15,6 +15,7 @@ class EditViewController: UIViewController {
     
     var countryCurrencyCode: [CountryCurrencyCode]?
     var currentCoin: CurrentPrice?
+    var selectedCurrencyCode: CountryCurrencyCode?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +25,11 @@ class EditViewController: UIViewController {
         if let coin = currentCoin {
             title = coin.coinName
             for currencyCode in countryCurrencyCode! {
-                currencyCode.checked = currencyCode.currencyCode == coin.currencyCode
+                if currencyCode.checked {
+                    selectedCurrencyCode = currencyCode
+                }
             }
         }
-    }
-    
-    @IBAction func cancelButtonPressed(_ sender: UIButton) {
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
@@ -47,7 +47,9 @@ extension EditViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constansts.editPage.cellIdentifier, for: indexPath)
         cell.textLabel?.text = countryCurrencyCode![indexPath.row].currencyCode
-        cell.accessoryType = countryCurrencyCode![indexPath.row].checked ? .checkmark : .none
+        if let safeSelectedCurrency = selectedCurrencyCode {
+            cell.accessoryType = countryCurrencyCode![indexPath.row].currencyCode == safeSelectedCurrency.currencyCode ? .checkmark : .none
+        }
         return cell
     }
     
