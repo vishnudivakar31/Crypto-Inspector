@@ -9,29 +9,47 @@
 import UIKit
 
 class EditViewController: UIViewController {
-
-    @IBOutlet weak var coinImageView: UIImageView!
-    @IBOutlet weak var coinLabelView: UILabel!
-    @IBOutlet weak var currentPriceLabel: UILabel!
-    var coin: CurrentPrice?
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    var countryCurrencyCode: [CountryCurrencyCode]?
+    var currentCoin: CurrentPrice?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let safeCoin = coin {
-            coinLabelView.text = safeCoin.coinName
-            currentPriceLabel.text = "Price: \(Util.getCurrencySymbol(with: safeCoin.currencyCode)) \(safeCoin.currentPriceLabel)"
-            if let url = URL(string: safeCoin.imageUrl), let safeData = try? Data(contentsOf: url) {
-                if let image = UIImage(data: safeData) {
-                    DispatchQueue.main.async {
-                        self.coinImageView.image = image
-                    }
-                }
+        countryCurrencyCode = Util.generateCountryCurrencyCode()
+        tableView.delegate = self
+        tableView.dataSource = self
+        if let coin = currentCoin {
+            title = coin.coinName
+            for currencyCode in countryCurrencyCode! {
+                currencyCode.checked = currencyCode.currencyCode == coin.currencyCode
             }
         }
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
     }
-    @IBAction func submitButtonPressed(_ sender: UIButton) {
+    
+    @IBAction func saveButtonPressed(_ sender: Any) {
     }
+}
+
+// MARK:- UITableView delegate and datasource
+
+extension EditViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("Country codes: \(countryCurrencyCode?.count ?? 0)")
+        return countryCurrencyCode?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constansts.editPage.cellIdentifier, for: indexPath)
+        cell.textLabel?.text = countryCurrencyCode![indexPath.row].currencyCode
+        cell.accessoryType = countryCurrencyCode![indexPath.row].checked ? .checkmark : .none
+        return cell
+    }
+    
+    
 }

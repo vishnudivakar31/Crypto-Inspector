@@ -26,5 +26,8 @@ struct Constansts {
         static let currentRatelabel = "rate"
         static let editSegue = "goToEdit"
     }
+    struct editPage {
+        static let cellIdentifier = "EditCellIdentifier"
+    }
     
 }

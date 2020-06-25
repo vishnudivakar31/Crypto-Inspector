@@ -59,4 +59,35 @@ class Util {
         let locale = NSLocale(localeIdentifier: identifier) as Locale
         return locale.currencySymbol!
     }
+    
+    static func generateCountryCurrencyCode() -> [CountryCurrencyCode] {
+        var result = [CountryCurrencyCode]()
+        let countryCurrencyDict = getCountryCurrencyCodeDictionary()
+        for currencyCode in countryCurrencyDict {
+            let countryCurrencyCode = CountryCurrencyCode(currencyCode: currencyCode, checked: false)
+            result.append(countryCurrencyCode)
+        }
+        result.sort {$0.currencyCode < $1.currencyCode}
+        return result
+    }
+    
+    private static func getCountryCurrencyCodeDictionary() -> [String] {
+        var result = Set<String>()
+        let content = readDataFromFile(file: "country-code")
+        let lines = content.split(separator: "\r\n")
+        for line in lines {
+            result.insert(String(line.split(separator: ",")[0]))
+        }
+        return Array(result)
+    }
+    
+    private static func readDataFromFile(file: String) -> String {
+        guard let filePath = Bundle.main.path(forResource: file, ofType: "csv") else {fatalError("Unable to find \(file).csv")}
+        do {
+            let contents = try String(contentsOfFile: filePath)
+            return contents
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+    }
 }

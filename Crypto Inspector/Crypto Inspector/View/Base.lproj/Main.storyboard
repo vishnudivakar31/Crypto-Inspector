@@ -94,96 +94,101 @@
                     <navigationItem key="navigationItem" title="Home" id="Bsm-1d-Kmz"/>
                     <connections>
                         <outlet property="labelView" destination="4hs-F0-0OZ" id="q38-Jj-UEo"/>
-                        <segue destination="M7p-lX-JSO" kind="presentation" identifier="goToEdit" id="1RS-yg-POc"/>
+                        <segue destination="nS2-pq-7B8" kind="show" identifier="goToEdit" id="ivq-Wb-kqq"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TKk-XK-vlW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2023" y="132"/>
         </scene>
-        <!--Edit View Controller-->
-        <scene sceneID="sBW-L9-egq">
+        <!--Bitcoin-->
+        <scene sceneID="imj-ZB-iNu">
             <objects>
-                <viewController id="M7p-lX-JSO" customClass="EditViewController" customModule="Crypto_Inspector" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7qB-4W-huf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                <viewController id="nS2-pq-7B8" customClass="EditViewController" customModule="Crypto_Inspector" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z9k-cu-sbo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="8Bo-aI-Qh3">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="s42-41-DdC">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qW-VW-E9a">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="25.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qBK-bW-C5W">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="300.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="255" id="6jc-OM-aAS"/>
-                                            <constraint firstAttribute="width" constant="414" id="GyS-tR-eyM"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYg-Ah-1R3">
-                                        <rect key="frame" x="0.0" y="386" width="414" height="28.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="22"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Price: US$ 2455" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BL7-hK-ony">
-                                        <rect key="frame" x="0.0" y="444.5" width="414" height="25"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="on5-b4-BUJ">
-                                        <rect key="frame" x="0.0" y="500" width="414" height="230"/>
-                                    </pickerView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="59" translatesAutoresizingMaskIntoConstraints="NO" id="LHq-Dh-zLE">
-                                        <rect key="frame" x="0.0" y="759.5" width="414" height="48.5"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ELZ-Hj-6UL">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="715"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search country names" id="J36-bk-7N7">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                                        </searchBar>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EditCellIdentifier" id="OMO-cO-hFZ">
+                                                <rect key="frame" x="0.0" y="72" width="414" height="43.5"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OMO-cO-hFZ" id="MFx-mV-lg1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="180" translatesAutoresizingMaskIntoConstraints="NO" id="EZG-HX-jfK">
+                                        <rect key="frame" x="55.5" y="725" width="303" height="49"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10j-9Y-OzO">
-                                                <rect key="frame" x="0.0" y="0.0" width="177.5" height="48.5"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6d-lj-7E1">
+                                                <rect key="frame" x="0.0" y="0.0" width="78" height="49"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="d6d-lj-7E1" secondAttribute="height" multiplier="8:5" id="rcc-dm-tFk"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                 <state key="normal" title="Cancel">
                                                     <color key="titleColor" red="0.6069023013" green="0.1105789021" blue="0.12151367220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="cancelButtonPressed:" destination="M7p-lX-JSO" eventType="touchUpInside" id="xRm-f4-hjf"/>
+                                                    <action selector="cancelButtonPressed:" destination="nS2-pq-7B8" eventType="touchUpInside" id="tF2-aT-s4u"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeD-hS-9Xs">
-                                                <rect key="frame" x="236.5" y="0.0" width="177.5" height="48.5"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                                <state key="normal" title="Submit"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCb-WS-Lb5">
+                                                <rect key="frame" x="258" y="0.0" width="45" height="49"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="tCb-WS-Lb5" secondAttribute="height" multiplier="34:37" id="PRI-yC-fmH"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                                <state key="normal" title="Save"/>
                                                 <connections>
-                                                    <action selector="submitButtonPressed:" destination="M7p-lX-JSO" eventType="touchUpInside" id="zgh-iB-p2w"/>
+                                                    <action selector="saveButtonPressed:" destination="nS2-pq-7B8" eventType="touchUpInside" id="LR6-PZ-rGu"/>
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="d6d-lj-7E1" firstAttribute="leading" secondItem="EZG-HX-jfK" secondAttribute="leading" id="xdM-cM-ecP"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="ELZ-Hj-6UL" firstAttribute="top" secondItem="s42-41-DdC" secondAttribute="top" id="45a-Jr-KaZ"/>
+                                    <constraint firstItem="ELZ-Hj-6UL" firstAttribute="leading" secondItem="s42-41-DdC" secondAttribute="leading" id="NjW-4A-YHo"/>
+                                    <constraint firstAttribute="trailing" secondItem="ELZ-Hj-6UL" secondAttribute="trailing" id="ruS-AQ-UQT"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="8Bo-aI-Qh3" firstAttribute="top" secondItem="F9X-xR-gaq" secondAttribute="top" id="7s4-XF-kNR"/>
-                            <constraint firstItem="F9X-xR-gaq" firstAttribute="bottom" secondItem="8Bo-aI-Qh3" secondAttribute="bottom" id="gkv-CO-fF2"/>
-                            <constraint firstItem="8Bo-aI-Qh3" firstAttribute="leading" secondItem="F9X-xR-gaq" secondAttribute="leading" id="shr-KQ-Zbw"/>
-                            <constraint firstItem="F9X-xR-gaq" firstAttribute="trailing" secondItem="8Bo-aI-Qh3" secondAttribute="trailing" id="vtg-Dx-l7m"/>
+                            <constraint firstItem="oTX-tY-Q35" firstAttribute="trailing" secondItem="s42-41-DdC" secondAttribute="trailing" id="1lo-kb-rDv"/>
+                            <constraint firstItem="s42-41-DdC" firstAttribute="top" secondItem="oTX-tY-Q35" secondAttribute="top" id="Ggp-Ex-t3h"/>
+                            <constraint firstItem="s42-41-DdC" firstAttribute="leading" secondItem="oTX-tY-Q35" secondAttribute="leading" id="quv-Rz-5H8"/>
+                            <constraint firstItem="oTX-tY-Q35" firstAttribute="bottom" secondItem="s42-41-DdC" secondAttribute="bottom" id="ufv-tk-Hss"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="F9X-xR-gaq"/>
+                        <viewLayoutGuide key="safeArea" id="oTX-tY-Q35"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Bitcoin" id="irI-rJ-rHU"/>
                     <connections>
-                        <outlet property="coinImageView" destination="qBK-bW-C5W" id="Igr-sp-tc2"/>
-                        <outlet property="coinLabelView" destination="DYg-Ah-1R3" id="wpa-ma-VlJ"/>
-                        <outlet property="currentPriceLabel" destination="BL7-hK-ony" id="2eF-5B-nhg"/>
+                        <outlet property="searchBar" destination="J36-bk-7N7" id="tGd-qK-Akp"/>
+                        <outlet property="tableView" destination="ELZ-Hj-6UL" id="Z1K-LN-hUQ"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wfK-3x-bH3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ds4-yd-s1B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2866.666666666667" y="133.92857142857142"/>
+            <point key="canvasLocation" x="2911.594202898551" y="140.625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pNJ-1m-Iz1">

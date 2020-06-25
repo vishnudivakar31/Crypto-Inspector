@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8B2BBFCF24A4F2AA007E8A6D /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2BBFCE24A4F2AA007E8A6D /* EditViewController.swift */; };
+		8B2BBFD124A51F6E007E8A6D /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2BBFD024A51F6E007E8A6D /* EditViewController.swift */; };
+		8B2BBFDB24A543EC007E8A6D /* CountryCurrencyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2BBFDA24A543EC007E8A6D /* CountryCurrencyCode.swift */; };
+		8B2BBFDD24A55856007E8A6D /* country-code.csv in Resources */ = {isa = PBXBuildFile; fileRef = 8B2BBFDC24A55856007E8A6D /* country-code.csv */; };
 		8BA10CDC24A3E3FA006A5A5F /* CurrentPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA10CDB24A3E3FA006A5A5F /* CurrentPrice.swift */; };
 		8BED280924A0FF18008D7F66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BED280824A0FF18008D7F66 /* AppDelegate.swift */; };
 		8BED280B24A0FF18008D7F66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BED280A24A0FF18008D7F66 /* SceneDelegate.swift */; };
@@ -30,7 +32,9 @@
 /* Begin PBXFileReference section */
 		82D73C4C670EFA49E5DB2143 /* Pods-Crypto Inspector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto Inspector.debug.xcconfig"; path = "Target Support Files/Pods-Crypto Inspector/Pods-Crypto Inspector.debug.xcconfig"; sourceTree = "<group>"; };
 		83D3595E7D9362336671B6A1 /* Pods-Crypto Inspector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto Inspector.release.xcconfig"; path = "Target Support Files/Pods-Crypto Inspector/Pods-Crypto Inspector.release.xcconfig"; sourceTree = "<group>"; };
-		8B2BBFCE24A4F2AA007E8A6D /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		8B2BBFD024A51F6E007E8A6D /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		8B2BBFDA24A543EC007E8A6D /* CountryCurrencyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCurrencyCode.swift; sourceTree = "<group>"; };
+		8B2BBFDC24A55856007E8A6D /* country-code.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "country-code.csv"; sourceTree = "<group>"; };
 		8BA10CDB24A3E3FA006A5A5F /* CurrentPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPrice.swift; sourceTree = "<group>"; };
 		8BED280524A0FF18008D7F66 /* Crypto Inspector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crypto Inspector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BED280824A0FF18008D7F66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 				8BED281324A0FF19008D7F66 /* LaunchScreen.storyboard */,
 				8BED281624A0FF19008D7F66 /* Info.plist */,
 				8BED282424A12BD8008D7F66 /* Secrets.plist */,
+				8B2BBFDC24A55856007E8A6D /* country-code.csv */,
 			);
 			path = "Crypto Inspector";
 			sourceTree = "<group>";
@@ -122,7 +127,7 @@
 				8BED280C24A0FF18008D7F66 /* ViewController.swift */,
 				8BED282824A2410E008D7F66 /* HomeTableViewController.swift */,
 				8BED282E24A24872008D7F66 /* HomeTableViewCell.swift */,
-				8B2BBFCE24A4F2AA007E8A6D /* EditViewController.swift */,
+				8B2BBFD024A51F6E007E8A6D /* EditViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 				8BED282624A13A7F008D7F66 /* RawCoin.swift */,
 				8BED282C24A244B8008D7F66 /* HomeModel.swift */,
 				8BA10CDB24A3E3FA006A5A5F /* CurrentPrice.swift */,
+				8B2BBFDA24A543EC007E8A6D /* CountryCurrencyCode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -218,6 +224,7 @@
 			files = (
 				8BED282524A12BD8008D7F66 /* Secrets.plist in Resources */,
 				8BED281524A0FF19008D7F66 /* LaunchScreen.storyboard in Resources */,
+				8B2BBFDD24A55856007E8A6D /* country-code.csv in Resources */,
 				8BED281224A0FF19008D7F66 /* Assets.xcassets in Resources */,
 				8BED283124A24872008D7F66 /* HomeTableViewCell.xib in Resources */,
 				8BED281024A0FF18008D7F66 /* Main.storyboard in Resources */,
@@ -273,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B2BBFDB24A543EC007E8A6D /* CountryCurrencyCode.swift in Sources */,
 				8BED280D24A0FF18008D7F66 /* ViewController.swift in Sources */,
 				8BED280924A0FF18008D7F66 /* AppDelegate.swift in Sources */,
 				8BED282D24A244B8008D7F66 /* HomeModel.swift in Sources */,
@@ -281,7 +289,7 @@
 				8BED282124A11755008D7F66 /* Constants.swift in Sources */,
 				8BA10CDC24A3E3FA006A5A5F /* CurrentPrice.swift in Sources */,
 				8BED283024A24872008D7F66 /* HomeTableViewCell.swift in Sources */,
-				8B2BBFCF24A4F2AA007E8A6D /* EditViewController.swift in Sources */,
+				8B2BBFD124A51F6E007E8A6D /* EditViewController.swift in Sources */,
 				8BED282924A2410E008D7F66 /* HomeTableViewController.swift in Sources */,
 				8BED282324A12988008D7F66 /* ConfigurationModel.swift in Sources */,
 				8BED282724A13A7F008D7F66 /* RawCoin.swift in Sources */,

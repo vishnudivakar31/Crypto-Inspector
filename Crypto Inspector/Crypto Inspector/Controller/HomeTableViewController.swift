@@ -90,7 +90,7 @@ class HomeTableViewController: UITableViewController {
             if identifier == Constansts.HomePage.editSegue {
                 if let destination = segue.destination as? EditViewController {
                     if let safeCoin = self.selectedCoin {
-                        destination.coin = safeCoin
+                        destination.currentCoin = safeCoin
                     }
                 }
             }
