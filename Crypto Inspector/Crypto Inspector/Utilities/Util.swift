@@ -46,4 +46,17 @@ class Util {
     func setAppLaunched(_ status: Bool) {
         appLaunched = status
     }
+    
+    //MARK:- Currency code and Symbol
+    static func getDefaultCurrencyCode() -> String {
+        let locale = Locale.current
+        let currencyCode = locale.currencyCode!
+        return currencyCode
+    }
+    
+    static func getCurrencySymbol(with currencyCode: String) -> String {
+        let identifier = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.currencyCode.rawValue: currencyCode])
+        let locale = NSLocale(localeIdentifier: identifier) as Locale
+        return locale.currencySymbol!
+    }
 }

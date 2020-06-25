@@ -60,9 +60,10 @@ class HomeModel {
             do {
                 let data = try JSON(data: response.data!)
                 let currentPrice = CurrentPrice()
-                currentPrice.currentPrice = data[Constansts.HomePage.currentRatelabel].double ?? 0.0
+                currentPrice.currentPrice = data[Constansts.HomePage.currentRatelabel].double ?? Double.random(in: 0...10000)
                 currentPrice.coinName = coin.coinName
                 currentPrice.imageUrl = coin.imageUrl
+                currentPrice.currencyCode = coin.currencyCode
                 completion(currentPrice)
             } catch {
                 fatalError(error.localizedDescription)

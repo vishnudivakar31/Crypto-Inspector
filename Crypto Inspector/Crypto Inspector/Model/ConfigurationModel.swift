@@ -76,6 +76,7 @@ class ConfigurationModel {
                 rawCoin.asset_id = asset_id
                 rawCoin.coinName = coinName
                 rawCoin.imageUrl = imageUrl
+                rawCoin.currencyCode = Util.getDefaultCurrencyCode()
                 rawCoinList.append(rawCoin)
             }
         }

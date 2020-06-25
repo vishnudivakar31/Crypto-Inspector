@@ -16,11 +16,18 @@ class HomeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.refreshControl = UIRefreshControl()
+        self.tableView.refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.tableView.refreshControl?.addTarget(self, action: #selector(self.refreshTable), for: .valueChanged)
         self.tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: Constansts.HomePage.cellIdentifier)
         homeModel.delegate = self
         Timer.scheduledTimer(withTimeInterval: 60, repeats: true, block: { (_) in
             self.homeModel.getCurrentPrice()
         })
+        homeModel.getCurrentPrice()
+    }
+    
+    @objc private func refreshTable() {
         homeModel.getCurrentPrice()
     }
     
@@ -35,11 +42,28 @@ class HomeTableViewController: UITableViewController {
         let currentPrice = currentPrices[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: Constansts.HomePage.cellIdentifier, for: indexPath) as! HomeTableViewCell
         cell.coinLabel.text = currentPrice.coinName
-        cell.coinPrice.text = "USD \(currentPrice.currentPriceLabel)"
+        cell.coinPrice.text = "\(Util.getCurrencySymbol(with: currentPrice.currencyCode)) \(currentPrice.currentPriceLabel)"
         if let cryptoImage = loadImageFromUrl(currentPrice.imageUrl) {
             cell.coinImageView.image = cryptoImage
         }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
+            print(self.currentPrices[indexPath.row].coinName)
+            //TODO: Delete the item
+        }
+        deleteAction.image = UIImage(systemName: "trash.circle.fill")
+        
+        let editAction = UIContextualAction(style: .normal, title: "Edit") { (action, view, completionHandler) in
+            print(self.currentPrices[indexPath.row].coinName)
+            //TODO: Edit Item
+        }
+        editAction.image = UIImage(systemName: "pencil")
+        editAction.backgroundColor = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
+        let config = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+        return config
     }
     
     func loadImageFromUrl(_ url: String) -> UIImage? {
@@ -67,5 +91,6 @@ extension HomeTableViewController: HomeModelProtocol {
         currentPrices.sort {$0.currentPrice > $1.currentPrice}
         self.setLiveLabel()
         tableView.reloadData()
+        tableView.refreshControl?.endRefreshing()
     }
 }

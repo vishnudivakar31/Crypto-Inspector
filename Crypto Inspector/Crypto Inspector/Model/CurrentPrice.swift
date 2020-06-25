@@ -15,4 +15,5 @@ class CurrentPrice {
     var currentPriceLabel: String {
         return String(format: "%.2f", currentPrice)
     }
+    var currencyCode: String = ""
 }

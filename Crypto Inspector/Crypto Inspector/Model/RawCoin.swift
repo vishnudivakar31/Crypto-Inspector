@@ -14,4 +14,5 @@ class RawCoin: Object {
     @objc dynamic var coinName: String = ""
     @objc dynamic var imageUrl: String = ""
     @objc dynamic var checked: Bool = false
+    @objc dynamic var currencyCode: String = ""
 }
