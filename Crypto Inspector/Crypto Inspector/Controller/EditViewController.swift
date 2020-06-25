@@ -25,7 +25,7 @@ class EditViewController: UIViewController {
         if let coin = currentCoin {
             title = coin.coinName
             for currencyCode in countryCurrencyCode! {
-                if currencyCode.checked {
+                if currencyCode.currencyCode == coin.currencyCode {
                     selectedCurrencyCode = currencyCode
                 }
             }
