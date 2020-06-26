@@ -40,7 +40,6 @@ class EditViewController: UIViewController {
 
 extension EditViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("Country codes: \(countryCurrencyCode?.count ?? 0)")
         return countryCurrencyCode?.count ?? 0
     }
     
@@ -51,6 +50,17 @@ extension EditViewController: UITableViewDelegate, UITableViewDataSource {
             cell.accessoryType = countryCurrencyCode![indexPath.row].currencyCode == safeSelectedCurrency.currencyCode ? .checkmark : .none
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let safeCoin = countryCurrencyCode?[indexPath.row], let safeCurrentCoin = selectedCurrencyCode {
+            if safeCoin.currencyCode == safeCurrentCoin.currencyCode {
+                selectedCurrencyCode = nil
+            } else {
+                selectedCurrencyCode = safeCoin
+            }
+            tableView.reloadData()
+        }
     }
     
     
