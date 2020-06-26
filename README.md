@@ -6,4 +6,6 @@ This is an iOS app which allows users to monitor current price of crypto-coins.
 ### Configuration Page
 <div style="display: flex">
   <img src="https://github.com/vishnudivakar31/Crypto-Inspector/blob/master/Crypto%20Inspector/Screenshots/Configuration.jpeg" width="200" height="400" />
+  <img src="https://github.com/vishnudivakar31/Crypto-Inspector/blob/master/Crypto%20Inspector/Screenshots/Configuration-Search.jpeg" width="200" height="400" />
+  <img src="https://github.com/vishnudivakar31/Crypto-Inspector/blob/master/Crypto%20Inspector/Screenshots/Configuration-MultiSelect.jpeg" width="200" height="400" />
 </div>
