@@ -24,3 +24,12 @@ When user first installs the app and launch, the user would be asked to select t
 User can view all the followed coins and prices are updated every one minute.
   - By default coin prices will be monitored as per local currency
   - Users can edit the coin to change currency
+
+### Edit Page
+<div style="display: flex;" align="center">
+  <img src="https://github.com/vishnudivakar31/Crypto-Inspector/blob/master/Crypto%20Inspector/Screenshots/editpage.jpeg" width="200" height="400" />
+  <img src="https://github.com/vishnudivakar31/Crypto-Inspector/blob/master/Crypto%20Inspector/Screenshots/Edit-Search.jpeg" width="200" height="400" />
+</div>
+
+User can edit currency for each coin to monitor.
+  - User can search for a particular currency to attach with the coin.
