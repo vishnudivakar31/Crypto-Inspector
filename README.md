@@ -4,4 +4,4 @@ This is an iOS app which allows users to monitor current price of crypto-coins.
   - To use, create a Secret.plist with project, create dictionary and use apikey for coinapi
 
 ### Configuration Page
-![Configuration Page1](https://github.com/vishnudivakar31/Crypto-Inspector/blob/master/Crypto%20Inspector/Screenshots/Configuration.jpeg)
+<img src="https://github.com/vishnudivakar31/Crypto-Inspector/blob/master/Crypto%20Inspector/Screenshots/Configuration.jpeg" width="200" height="400" />
