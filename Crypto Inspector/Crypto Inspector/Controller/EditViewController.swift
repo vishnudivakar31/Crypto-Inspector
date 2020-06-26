@@ -22,6 +22,7 @@ class EditViewController: UIViewController {
         countryCurrencyCode = Util.generateCountryCurrencyCode()
         tableView.delegate = self
         tableView.dataSource = self
+        searchBar.delegate = self
         if let coin = currentCoin {
             title = coin.coinName
             for currencyCode in countryCurrencyCode! {
@@ -37,7 +38,6 @@ class EditViewController: UIViewController {
 }
 
 // MARK:- UITableView delegate and datasource
-
 extension EditViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return countryCurrencyCode?.count ?? 0
@@ -62,6 +62,22 @@ extension EditViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.reloadData()
         }
     }
-    
+}
+
+// MARK:- UISearchBarDelegate
+extension EditViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.count == 0 {
+            countryCurrencyCode = Util.generateCountryCurrencyCode()
+            tableView.reloadData()
+        }
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let searchText = searchBar.text {
+            countryCurrencyCode = countryCurrencyCode?.filter {$0.currencyCode.lowercased().starts(with: searchText.lowercased())}
+            tableView.reloadData()
+        }
+        searchBar.endEditing(true)
+    }
     
 }
