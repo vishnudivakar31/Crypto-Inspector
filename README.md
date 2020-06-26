@@ -20,3 +20,7 @@ When user first installs the app and launch, the user would be asked to select t
   <img src="https://github.com/vishnudivakar31/Crypto-Inspector/blob/master/Crypto%20Inspector/Screenshots/Home-Default.jpeg" width="200" height="400" />
   <img src="https://github.com/vishnudivakar31/Crypto-Inspector/blob/master/Crypto%20Inspector/Screenshots/home-edit.gif" width="200" height="400" />
 </div>
+
+User can view all the followed coins and prices are updated every one minute.
+  - By default coin prices will be monitored as per local currency
+  - Users can edit the coin to change currency
