@@ -10,6 +10,7 @@
 		8B2BBFD124A51F6E007E8A6D /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2BBFD024A51F6E007E8A6D /* EditViewController.swift */; };
 		8B2BBFDB24A543EC007E8A6D /* CountryCurrencyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2BBFDA24A543EC007E8A6D /* CountryCurrencyCode.swift */; };
 		8B2BBFDD24A55856007E8A6D /* country-code.csv in Resources */ = {isa = PBXBuildFile; fileRef = 8B2BBFDC24A55856007E8A6D /* country-code.csv */; };
+		8B2BBFDF24A6337F007E8A6D /* EditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2BBFDE24A6337F007E8A6D /* EditModel.swift */; };
 		8BA10CDC24A3E3FA006A5A5F /* CurrentPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA10CDB24A3E3FA006A5A5F /* CurrentPrice.swift */; };
 		8BED280924A0FF18008D7F66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BED280824A0FF18008D7F66 /* AppDelegate.swift */; };
 		8BED280B24A0FF18008D7F66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BED280A24A0FF18008D7F66 /* SceneDelegate.swift */; };
@@ -35,6 +36,7 @@
 		8B2BBFD024A51F6E007E8A6D /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		8B2BBFDA24A543EC007E8A6D /* CountryCurrencyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCurrencyCode.swift; sourceTree = "<group>"; };
 		8B2BBFDC24A55856007E8A6D /* country-code.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "country-code.csv"; sourceTree = "<group>"; };
+		8B2BBFDE24A6337F007E8A6D /* EditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditModel.swift; sourceTree = "<group>"; };
 		8BA10CDB24A3E3FA006A5A5F /* CurrentPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPrice.swift; sourceTree = "<group>"; };
 		8BED280524A0FF18008D7F66 /* Crypto Inspector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crypto Inspector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BED280824A0FF18008D7F66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				8BED282C24A244B8008D7F66 /* HomeModel.swift */,
 				8BA10CDB24A3E3FA006A5A5F /* CurrentPrice.swift */,
 				8B2BBFDA24A543EC007E8A6D /* CountryCurrencyCode.swift */,
+				8B2BBFDE24A6337F007E8A6D /* EditModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				8BED282124A11755008D7F66 /* Constants.swift in Sources */,
 				8BA10CDC24A3E3FA006A5A5F /* CurrentPrice.swift in Sources */,
 				8BED283024A24872008D7F66 /* HomeTableViewCell.swift in Sources */,
+				8B2BBFDF24A6337F007E8A6D /* EditModel.swift in Sources */,
 				8B2BBFD124A51F6E007E8A6D /* EditViewController.swift in Sources */,
 				8BED282924A2410E008D7F66 /* HomeTableViewController.swift in Sources */,
 				8BED282324A12988008D7F66 /* ConfigurationModel.swift in Sources */,

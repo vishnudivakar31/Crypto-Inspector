@@ -62,7 +62,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cryptoTypes[indexPath.row].checked = !cryptoTypes[indexPath.row].checked
         tableView.reloadData()
         tableView.deselectRow(at: indexPath, animated: true)
-        searchBar.endEditing(true)
+    }
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        if let searchText = searchBar.text {
+            if searchText.count == 0 {
+                searchBar.endEditing(true)
+            }
+        }
     }
 }
 

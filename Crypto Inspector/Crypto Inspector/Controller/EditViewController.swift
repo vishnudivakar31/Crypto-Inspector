@@ -16,6 +16,7 @@ class EditViewController: UIViewController {
     var countryCurrencyCode: [CountryCurrencyCode]?
     var currentCoin: CurrentPrice?
     var selectedCurrencyCode: CountryCurrencyCode?
+    let editModel = EditModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,10 @@ class EditViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
+        if let safeSelectedCurrencyCoin = selectedCurrencyCode, let safeCoin = currentCoin {
+            editModel.updateCurrencyCode(coinPrice: safeCoin, currencyCode: safeSelectedCurrencyCoin)
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }
 
@@ -60,6 +65,14 @@ extension EditViewController: UITableViewDelegate, UITableViewDataSource {
                 selectedCurrencyCode = safeCoin
             }
             tableView.reloadData()
+        }
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        if let searchText = searchBar.text {
+            if searchText.count == 0 {
+                searchBar.endEditing(true)
+            }
         }
     }
 }

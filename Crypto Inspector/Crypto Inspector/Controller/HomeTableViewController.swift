@@ -28,6 +28,10 @@ class HomeTableViewController: UITableViewController {
         homeModel.getCurrentPrice()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.homeModel.getCurrentPrice()
+    }
+    
     @objc private func refreshTable() {
         homeModel.getCurrentPrice()
     }
@@ -109,3 +113,4 @@ extension HomeTableViewController: HomeModelProtocol {
         tableView.refreshControl?.endRefreshing()
     }
 }
+
