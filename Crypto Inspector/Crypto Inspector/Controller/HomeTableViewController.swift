@@ -56,8 +56,14 @@ class HomeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
-            print(self.currentPrices[indexPath.row].coinName)
-            //TODO: Delete the item
+            let alertController = UIAlertController(title: "Delete coin", message: "Are you sure you want to delete?", preferredStyle: .alert)
+            let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (action) in
+                self.homeModel.deleteCoin(coinName: self.currentPrices[indexPath.row].coinName)
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alertController.addAction(deleteAction)
+            alertController.addAction(cancelAction)
+            self.present(alertController, animated: true, completion: nil)
         }
         deleteAction.image = UIImage(systemName: "trash.circle.fill")
         
@@ -105,6 +111,10 @@ class HomeTableViewController: UITableViewController {
 
 // MARK:- HomeModel Protocol Implementation
 extension HomeTableViewController: HomeModelProtocol {
+    func deletionComplete() {
+        self.homeModel.getCurrentPrice()
+    }
+    
     func currentPriceListFetched(currentPriceList: [CurrentPrice]) {
         currentPrices = currentPriceList
         currentPrices.sort {$0.currentPrice > $1.currentPrice}

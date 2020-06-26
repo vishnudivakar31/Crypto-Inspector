@@ -13,6 +13,7 @@ import SwiftyJSON
 
 protocol HomeModelProtocol {
     func currentPriceListFetched(currentPriceList: [CurrentPrice])
+    func deletionComplete()
 }
 
 class HomeModel {
@@ -20,6 +21,7 @@ class HomeModel {
     private let baseUrl = "https://rest.coinapi.io/v1"
     private var currentPriceList = [CurrentPrice]()
     var delegate: HomeModelProtocol?
+    private let realm = try! Realm()
     
     func getCurrentPrice() {
         let coinList = getSavedCoins()
@@ -28,9 +30,17 @@ class HomeModel {
         }
     }
     
+    func deleteCoin(coinName: String) {
+        if let coin = realm.objects(RawCoin.self).first(where: {$0.coinName == coinName}) {
+            try! realm.write {
+                realm.delete(coin)
+                self.delegate?.deletionComplete()
+            }
+        }
+    }
+    
     private func getSavedCoins() -> [RawCoin] {
         var coinList = [RawCoin]()
-        let realm = try! Realm()
         let coins = realm.objects(RawCoin.self)
         for coin in coins {
             coinList.append(coin)
